@@ -35,16 +35,13 @@ def binary_search(nums: list[int], target: int) -> bool:
 # This takes O(m * logn) time. O(m) to go through each row
 # and O(logn) for the search itself. Extra space is O(1).
 
-# However, we need O(log(m * n)). This is like performing
-# binary search on a single array of m * n elements.
-
 # We can convert the matrix into a list and perform
-# binary search on that list. This would take O(m + log(m * n)).
-# O(m) to create the list and O(log(m * n)) for the search.
+# binary search on that list. This would take O(m * n + log(m * n))
+# time. O(m * n) to create the list and O(log(m * n)) for the search.
 # Extra space would be O(m * n).
 
-# The right way is to perform binary search on the matrix directly
-# by treating the matrix as a list.
+# But we need O(log(m * n)) so the right way is to perform binary
+# search on the matrix directly by treating the matrix as a list.
 
 # Since we have two-way indexing for matrices, each element can be
 # assigned a position as follows:
