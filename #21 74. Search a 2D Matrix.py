@@ -68,7 +68,7 @@ def search_matrix_this(matrix : list[list[int]], target: int) -> bool:
         mid = (start + end) // 2
         j = mid % n
         i = (mid - j) // n
-        # mid  - j will always be a multiple of n.
+        # mid - j will always be a multiple of n.
         # I have used '//' to avoid floating point.
 
         if matrix[i][j] < target:
