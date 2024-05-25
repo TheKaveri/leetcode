@@ -69,7 +69,7 @@ def search_matrix_this(matrix : list[list[int]], target: int) -> bool:
         j = mid % n
         i = (mid - j) // n
         # mid  - j will always be a multiple of n.
-        # I have used '//' to void floating point.
+        # I have used '//' to avoid floating point.
 
         if matrix[i][j] < target:
             start = mid + 1
