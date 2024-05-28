@@ -31,8 +31,8 @@ def search_bst(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
         return root
     
 # If n is the number of nodes:
-# This takes O(logn) time on average and O(logn) space on average.
-# Worst case is O(n) for both space and time. (Happens for skewed BST).
+# This takes O(logn) time and O(logn) space. (For height-balanced BST)
+# Worst case is O(n) for both space and time. (Happens for skewed BST)
 
 # Even less lines of code:
 def search_bst(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
