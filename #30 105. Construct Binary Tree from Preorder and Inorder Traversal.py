@@ -122,11 +122,40 @@ def build_tree_helper(preorder, pre_start, pre_end, inorder, in_start, in_end):
 
 root = build_tree_ptr(preorder, inorder)
 
+# Further optimizations:
+# Funnily this runs slower on Leetcode :s
+
+def build_tree_helper(preorder, pre_start, pre_end, inorder, in_start, in_end):
+    if pre_start > pre_end:
+        return None
+
+    root = TreeNode(preorder[pre_start])
+
+    for i in range(in_start, in_end + 1):
+        if inorder[i] == root.val:
+            root_index = i
+            break
+
+    # This index is not relative to the 'inorder' array
+    # segment. It's relative to the entire 'inorder' array.
+
+    # root_index - in_start is the number of elements
+    # in the left sub-tree.
+    
+    root.left = build_tree_helper(preorder, pre_start + 1, pre_start + root_index - in_start, inorder, in_start, root_index - 1)
+    root.right = build_tree_helper(preorder, pre_start + root_index - in_start + 1, pre_end, inorder, root_index + 1, in_end)
+
+    return root
+
+root = build_tree_ptr(preorder, inorder)
+
 # Assume n is the number of nodes.
 # Extra space is O(n) (which is unavoidable since we build a tree).
 # Average time (if we have a balanced tree) is as follows:
 # T(n) = O(n) + 2T(n/2)
 # i.e. T(n) = O(nlog(n)) by the Master Theorem.
+
+# The root_index search is what takes O(n) time.
 
 # If tree is skwewed, then T(n) = O(n) + 2T(n-1)
 # i.e. T(n) = O(n^2)
