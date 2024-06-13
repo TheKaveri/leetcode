@@ -52,7 +52,7 @@ def combination_sum_helper(candidates, target, combination, solutions):
 
         # perform extension by adding an
         # element of candidate to this
-        # partial solutions
+        # partial solution
         for elem in candidates:
             combination.append(elem)
             combination_sum_helper(candidates, target, combination, solutions)
@@ -105,8 +105,7 @@ def combination_sum_helper(candidates, target, combination, solutions):
 
         # perform the modified extension 
         # by adding element of candidate to
-        # this partial solutions
-
+        # this partial solution
         if not combination:
             start_index = 0
         else:
