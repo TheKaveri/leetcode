@@ -63,8 +63,8 @@ def num_islands(grid: list[list[str]]) -> int:
     return count_islands
 
 # Time Complexity (worst case):
-# O(m * n) since could end up flooding
-# the entire grid in the worst case.
+# O(m * n) since we have to visit the entire
+# grid.
 
 # Space Complexity (worst case):
 # This happens when the call stack grows
