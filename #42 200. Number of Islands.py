@@ -68,14 +68,13 @@ def num_islands(grid: list[list[str]]) -> int:
 
 # Space Complexity (worst case):
 # This happens when the call stack grows
-# as much possible i.e. there is a single
+# as much as possible i.e. there is a single
 # recursion thread that goes deeper and deeper.
 
 # This can happen if we flood all of the cells
 # recursively without popping from the call stack
 # in intermediate scenarios. Hence O(m * n) is the
 # complexity.
-
 
 grid = [
   ["1","1","0","0","0"],
