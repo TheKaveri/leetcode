@@ -58,8 +58,8 @@ def max_area_of_island(grid: list[list[int]]) -> int:
     return max_area
 
 # Time Complexity (worst case):
-# O(m * n) since could have a case where the
-# grid happens to contain only 1s
+# O(m * n) since we have to visit the entire
+# grid.
 
 # Space Complexity (worst case):
 # This happens when the call stack grows
