@@ -45,3 +45,5 @@ def can_take(course, adj_list, visited) -> bool:
     # taken, so we do this that way don't have to
     # recurse again.
     return True
+
+# Time complexity: O(V + E)
