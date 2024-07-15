@@ -109,5 +109,5 @@ def tabulation_v2(obstacle_grid) -> int:
     return prev[0]
 
 # Since the time and space complexities are identical
-# to the approaches in the original unique paths problem
+# to the ones in the original unique paths problem
 # I have not included them here.
